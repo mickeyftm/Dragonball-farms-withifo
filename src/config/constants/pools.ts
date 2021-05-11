@@ -507,7 +507,7 @@ const pools: PoolConfig[] = [
     stakingTokenName: QuoteToken.DBALL,
     stakingTokenAddress: {
       97: '0x85582d24455caaf44fc4f914bdca2a6cb73e6681',
-      56: '0xceB2f5e9C7F2D3BCd12A7560D73c56f3396af3F9', // CAKE
+      56: '0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8', // CAKE
     },
     contractAddress: {
       97: '0xF08d05d91426A63aB35Ef7f4bBC6E8717B59e838',

@@ -2,28 +2,18 @@
   {
     "inputs": [
       {
-        "internalType": "contract DBallToken",
-        "name": "_dball",
+        "internalType": "contract CoalToken",
+        "name": "_Coal",
         "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_devaddr",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_feeAddress",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_dballPerBlock",
-        "type": "uint256"
       },
       {
         "internalType": "uint256",
         "name": "_startBlock",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_CoalPerBlock",
         "type": "uint256"
       }
     ],
@@ -86,6 +76,31 @@
       {
         "indexed": true,
         "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "previousAmount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "EmissionRateUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
         "name": "previousOwner",
         "type": "address"
       },
@@ -97,6 +112,56 @@
       }
     ],
     "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "commissionAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "ReferralCommissionPaid",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "pid",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amountLockedUp",
+        "type": "uint256"
+      }
+    ],
+    "name": "RewardLockedUp",
     "type": "event"
   },
   {
@@ -138,6 +203,71 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "Coal",
+    "outputs": [
+      {
+        "internalType": "contract CoalToken",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "CoalPerBlock",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "CoalReferral",
+    "outputs": [
+      {
+        "internalType": "contract ICoalReferral",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MAXIMUM_HARVEST_INTERVAL",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MAXIMUM_REFERRAL_COMMISSION_RATE",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -155,9 +285,9 @@
         "type": "uint16"
       },
       {
-        "internalType": "uint16",
-        "name": "_unstakingFeeBP",
-        "type": "uint16"
+        "internalType": "uint256",
+        "name": "_harvestInterval",
+        "type": "uint256"
       },
       {
         "internalType": "bool",
@@ -171,26 +301,24 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "dball",
-    "outputs": [
+    "inputs": [
       {
-        "internalType": "contract DBallToken",
-        "name": "",
+        "internalType": "uint256",
+        "name": "_pid",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_user",
         "type": "address"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "dballPerBlock",
+    "name": "canHarvest",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "bool",
         "name": "",
-        "type": "uint256"
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -207,6 +335,11 @@
         "internalType": "uint256",
         "name": "_amount",
         "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_referrer",
+        "type": "address"
       }
     ],
     "name": "deposit",
@@ -215,21 +348,8 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_devaddr",
-        "type": "address"
-      }
-    ],
-    "name": "dev",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "inputs": [],
-    "name": "devaddr",
+    "name": "devAddress",
     "outputs": [
       {
         "internalType": "address",
@@ -287,7 +407,7 @@
         "type": "uint256"
       }
     ],
-    "stateMutability": "view",
+    "stateMutability": "pure",
     "type": "function"
   },
   {
@@ -323,7 +443,7 @@
         "type": "address"
       }
     ],
-    "name": "pendingEgg",
+    "name": "pendingCoal",
     "outputs": [
       {
         "internalType": "uint256",
@@ -361,7 +481,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "accEggPerShare",
+        "name": "accCoalPerShare",
         "type": "uint256"
       },
       {
@@ -370,9 +490,9 @@
         "type": "uint16"
       },
       {
-        "internalType": "uint16",
-        "name": "unstakingFeeBP",
-        "type": "uint16"
+        "internalType": "uint256",
+        "name": "harvestInterval",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -386,6 +506,19 @@
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "referralCommissionRate",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
       }
     ],
     "stateMutability": "view",
@@ -416,9 +549,9 @@
         "type": "uint16"
       },
       {
-        "internalType": "uint16",
-        "name": "_unstakingFeeBP",
-        "type": "uint16"
+        "internalType": "uint256",
+        "name": "_harvestInterval",
+        "type": "uint256"
       },
       {
         "internalType": "bool",
@@ -434,12 +567,51 @@
   {
     "inputs": [
       {
+        "internalType": "contract ICoalReferral",
+        "name": "_CoalReferral",
+        "type": "address"
+      }
+    ],
+    "name": "setCoalReferral",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_devAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setDevAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "address",
         "name": "_feeAddress",
         "type": "address"
       }
     ],
     "name": "setFeeAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "_referralCommissionRate",
+        "type": "uint16"
+      }
+    ],
+    "name": "setReferralCommissionRate",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -471,6 +643,19 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "totalLockedUpRewards",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "address",
@@ -487,7 +672,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_dballPerBlock",
+        "name": "_CoalPerBlock",
         "type": "uint256"
       }
     ],
@@ -532,6 +717,16 @@
       {
         "internalType": "uint256",
         "name": "rewardDebt",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "rewardLockedUp",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "nextHarvestUntil",
         "type": "uint256"
       }
     ],

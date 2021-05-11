@@ -9,7 +9,7 @@ export interface Farm extends FarmConfig {
   poolWeight?: number
   depositFeeBP?: number
   unstakingFeeBP?: number
-  dballPerBlock?: number
+  CoalPerBlock?: number
     userData?: {
     allowance: BigNumber
     tokenBalance: BigNumber
