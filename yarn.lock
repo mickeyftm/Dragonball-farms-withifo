@@ -11223,10 +11223,10 @@ moment@~2.23.0:
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.23.0.tgz#759ea491ac97d54bac5ad776996e2a58cc1bc225"
   integrity sha512-3IE39bHVqFbWWaPOMHZF98Q9c3LDKGTmypMiTM2QygGXXElkFWIH7GxfmlwmY2vwa+wmNsoYZmG2iusf1ZjJoA==
 
-mountaindefi-uikit@0.10.1:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/mountaindefi-uikit/-/mountaindefi-uikit-0.10.1.tgz#8f8e6e42eff0d2378e69c821c8610d7e96154ea5"
-  integrity sha512-ZjH7MHAZuanChaZk7MLPTUt+GCehfdZ8vk31kUHACbBQYeCbojZjbrgAt4D5KiaQ7jzQkorsRB0d0JqyhT5QAA==
+mountaindefi-uikit@0.10.2:
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/mountaindefi-uikit/-/mountaindefi-uikit-0.10.2.tgz#87dd098ff12627a32040117632718ae3dac35c5c"
+  integrity sha512-OqcsqS0InXLtRbiP+IVErAhc0pTQG9u+LdVZm1EEvUMF7NA8NdfMNRfcHHyCj4LEQ7mbcrnEK7eMqlOE42269Q==
   dependencies:
     "@types/lodash" "^4.14.162"
     "@types/styled-system" "^5.1.10"
