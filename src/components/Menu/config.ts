@@ -1,4 +1,4 @@
-import { MenuEntry } from '@pancakeswap-libs/uikit'
+import { MenuEntry } from 'mountaindefi-uikit'
 
 const config: MenuEntry[] = [
   {
@@ -7,132 +7,150 @@ const config: MenuEntry[] = [
     href: '/',
   },
   {
+    label: 'Buy COAL',
+    icon: 'CoalIcon',
+    href: 'https://exchange.mountaindefi.finance/#/swap?inputCurrency=0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8',
+  },
+  {
     label: 'Trade',
     icon: 'TradeIcon',
     items: [
       {
         label: 'Exchange',
-        href: 'http://exchange.dragonballfinance.org/',
+        href: 'http://exchange.mountaindefi.org/',
       },
       {
         label: 'Liquidity',
-        href: 'http://exchange.dragonballfinance.org/#/pool',
+        href: 'http://exchange.mountaindefi.org/#/pool',
       },
     ],
   },
   {
-    label: 'Farms',
-    icon: 'FarmIcon',
+    label: 'Mines',
+    icon: 'MinesIcon',
     href: '/farms',
   },
   {
-    label: 'Pools',
-    icon: 'PoolIcon',
+    label: 'Nodes',
+    icon: 'NodesIcon',
     href: '/pools',
+  },
+  {
+    label: "Referral",
+    icon: "ReferralIcon",
+    href: "/referral",
   },
   {
     label: 'Layer 1',
     icon: 'LayerIcon',
     href: '/layer/info',
   },
+  //  {
+  //    label: 'Super Mount Pool',
+  //    icon: 'PoolIcon',
+  //    href: '/supersaiyanpool',
+  //  },
+  //  {
+  //    label: 'IFO',
+  //    icon: 'IfoIcon',
+  //    href: '/ifo',
+  //  },
+  //  {
+  //    label: 'Nft',
+  //    icon: 'NftIcon',
+  //    href: '/Nft',
+  //  },
+  //  {
+  //    label: 'Lottery',
+  //    icon: 'TicketIcon',
+  //    href: '/Lottery',
+  //  },
+  //  {
+  //    label: 'Gaming App',
+  //    icon: 'NftIcon',
+  //    href: '/Gaming',
+  //  },
   {
-    label: 'Super Saiyan Pool',
-    icon: 'PoolIcon',
-    href: '/supersaiyanpool',
+    label: 'Roadmap',
+    icon: 'RoadmapIcon',
+    href: 'https://mountaindefi.org/Roadmap',
   },
   {
-    label: 'IFO',
-    icon: 'IfoIcon',
-    href: '/ifo',
-  },
-  {
-    label: 'Nft',
-    icon: 'NftIcon',
-    href: '/Nft',
-  },
-  {
-    label: 'Lottery',
-    icon: 'TicketIcon',
-    href: '/Lottery',
-  },
-  {
-    label: 'Gaming App',
-    icon: 'NftIcon',
-    href: '/Gaming',
-  },
-  {
-    label: 'DBALL Info',
+    label: 'Coal Info',
     icon: 'InfoIcon',
     items: [
       {
-        label: 'BSC Scan',
-        href: 'https://bscscan.com/token/0xceB2f5e9C7F2D3BCd12A7560D73c56f3396af3F9',
-      },
-      {
         label: 'Price Graph',
-        href: 'https://dex.guru/token/0xceB2f5e9C7F2D3BCd12A7560D73c56f3396af3F9-bsc',
+        href: 'https://dex.guru/token/0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8-bsc',
       },
       {
         label: 'DApp Radar',
-        href: 'https://dappradar.com/binance-smart-chain/defi/dragonball-finance',
+        href: 'https://dappradar.com/binance-smart-chain/defi/mountaindefi-finance',
       },
     ],
   },
+
   {
-    label: 'SENZU Info',
-    icon: 'InfoIcon',
+    label: "BSC Scan",
+    icon: "BSCscanIcon",
     items: [
       {
-        label: 'BSC Scan',
-        href: 'https://bscscan.com/token/0xcBA1813Ede683333020cedea7C3b63FbaC28e78e',
-      },
-      {
-        label: 'Price Graph',
-        href: 'https://dex.guru/token/0xcBA1813Ede683333020cedea7C3b63FbaC28e78e-bsc',
-      },
-      {
-        label: 'DApp Radar',
-        href: 'https://dappradar.com/binance-smart-chain/defi/dragonball-finance',
+        label: 'COAL',
+        href: "https://bscscan.com/address/0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8",
       },
     ],
   },
+  //  {
+  //    label: 'SENZU Info',
+  //    icon: 'InfoIcon',
+  //    items: [
+  //      {
+  //        label: 'BSC Scan',
+  //        href: 'https://bscscan.com/token/0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8',
+  //      },
+  //     {
+  //        label: 'Price Graph',
+  //        href: 'https://dex.guru/token/0xcBA1813Ede683333020cedea7C3b63FbaC28e78e-bsc',
+  //      },
+      //  {
+      //    label: 'DApp Radar',
+      //    href: 'https://dappradar.com/binance-smart-chain/defi/dragonball-finance',
+      //  },
+  //    ],
+  //  },
   {
     label: 'More',
     icon: 'MoreIcon',
     items: [
       {
         label: 'Github',
-        href: 'https://github.com/DragonBallFinance',
+        href: 'https://github.com/MountainDefi',
       },
       {
         label: 'Docs',
-        href: 'https://docs.dragonballfinance.org/',
+        href: 'https://docs.mountaindefi.com',
       },
       {
         label: 'Blog',
-        href: 'https://dragonballfinance.medium.com/',
+        href: 'https://mountaindefi.medium.com/',
       },
       {
         label: 'Whitepaper',
-        href: 'https://dragonballfinance.org/Whitepaper.pdf',
+        href: 'https://mountaindefi.org/Whitepaper.pdf',
       },
     ],
   },
-  {
-    label: 'Roadmap',
-    icon: 'RoadmapIcon',
-    href: 'https://dragonballfinance.org/Roadmap',
-  },
-  {
-    label: 'DBALL Audit',
-    icon: 'AuditIcon',
-    href: 'https://dragonballfinance.org/Dball.pdf',
-  },
-  {
-    label: 'SENZU Audit',
-    icon: 'AuditIcon',
-    href: 'https://dragonballfinance.org/Senzu.pdf',
-  },
+
+  //  {
+  //    label: 'DBALL Audit',
+  //    icon: 'AuditIcon',
+  //    href: 'https://mountaindefi.org/Dball.pdf',
+  //  },
+  //  {
+  //    label: 'SENZU Audit',
+  //    icon: 'AuditIcon',
+  //    href: 'https://dragonballfinance.org/Senzu.pdf',
+  //  },
 ]
 
 export default config
