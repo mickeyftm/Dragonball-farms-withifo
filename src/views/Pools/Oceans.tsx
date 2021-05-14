@@ -49,7 +49,7 @@ const Farm: React.FC = () => {
 
     // /!\ Assume that the farm quote price is BNB
     const stakingTokenPriceInBNB = priceToBnb(
-      QuoteToken.DBALL,
+      QuoteToken.coal,
       stakingTokenFarm?.tokenPriceVsQuote,
       stakingTokenFarm?.quoteTokenSymbol,
     )
@@ -82,7 +82,7 @@ const Farm: React.FC = () => {
             {TranslateString(282, 'Super Saiyan Pool')}
           </Heading>
           <ul>
-            <li>{TranslateString(580, 'Stake DBALL to earn new tokens.')}</li>
+            <li>{TranslateString(580, 'Stake coal to earn new tokens.')}</li>
             <li>{TranslateString(404, 'You can unstake at any time.')}</li>
             <li>{TranslateString(406, 'Rewards are calculated per block.')}</li>
           </ul>

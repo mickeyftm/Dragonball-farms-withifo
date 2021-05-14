@@ -113,7 +113,7 @@ const ifos: Ifo[] = [
     },
     isActive: false,
     name: 'DragonBallFinance',
-    token: 'DBALL',
+    token: 'coal',
     subTitle: 'The first Dragonball all in one DeFi platform on BSC network',
     description: 'The first Dragonball all in one DeFi platform on BSC network',
     saleAmount: '250 000',

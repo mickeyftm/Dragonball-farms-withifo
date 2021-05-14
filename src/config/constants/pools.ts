@@ -504,7 +504,7 @@ const pools: PoolConfig[] = [
   {
     sousId: 20,
     tokenName: 'WBNB',
-    stakingTokenName: QuoteToken.DBALL,
+    stakingTokenName: QuoteToken.COAL,
     stakingTokenAddress: {
       97: '0x85582d24455caaf44fc4f914bdca2a6cb73e6681',
       56: '0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8', // CAKE

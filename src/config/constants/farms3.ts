@@ -37,12 +37,12 @@ const farms3: Farm3Config[] = [
   {
     pid: 3,
     risk: 5,
-    lpSymbol: 'DBALL-BUSD LP',
+    lpSymbol: 'coal-BUSD LP',
     lpAddresses: {
       97: '',
       56: '0x55d06D963CDc4405E204FB1585b45b5E8e353719',
     },
-    tokenSymbol: 'DBALL',
+    tokenSymbol: 'coal',
     tokenAddresses: {
       97: '',
       56: '0xceB2f5e9C7F2D3BCd12A7560D73c56f3396af3F9',
@@ -53,12 +53,12 @@ const farms3: Farm3Config[] = [
   {
     pid: 4,
     risk: 5,
-    lpSymbol: 'DBALL-BNB LP',
+    lpSymbol: 'coal-BNB LP',
     lpAddresses: {
       97: '',
       56: '0x3330Bde1FfB5E358FCadfA266f98c95D7D5DC9B9',
     },
-    tokenSymbol: 'DBALL',
+    tokenSymbol: 'coal',
     tokenAddresses: {
       97: '',
       56: '0xceB2f5e9C7F2D3BCd12A7560D73c56f3396af3F9',
@@ -135,12 +135,12 @@ const farms3: Farm3Config[] = [
     pid: 5,
     risk: 5,
     isTokenOnly: true,
-    lpSymbol: 'DBALL',
+    lpSymbol: 'coal',
     lpAddresses: {
       97: '',
       56: '0x55d06d963cdc4405e204fb1585b45b5e8e353719', // VIKING-BUSD LP
     },
-    tokenSymbol: 'DBALL',
+    tokenSymbol: 'coal',
     tokenAddresses: {
       97: '',
       56: '0xceb2f5e9c7f2d3bcd12a7560d73c56f3396af3f9',

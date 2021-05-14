@@ -3,6 +3,10 @@ export default {
     56: '0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8',
     97: '',
   },
+  coal: {
+    56: '0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8',
+    97: '',
+  },
   masterChef: {
     56: '0x96F5fe35Ec3F19360608b4f7f0607f72fc70411A',
     97: '',

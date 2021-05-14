@@ -54,9 +54,9 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
         <Text>{TranslateString(316, 'Stake')}:</Text>
         <StyledLinkExternal href={
           isTokenOnly ?
-            `https://exchange.dragonballfinance.org/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
+            `https://exchange.mountaindefifinance.org/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
             :
-            `https://exchange.dragonballfinance.org/#/add/${liquidityUrlPathParts}`
+            `https://exchange.mountaindefifinance.org/#/add/${liquidityUrlPathParts}`
         }>
           {lpLabel}
         </StyledLinkExternal>

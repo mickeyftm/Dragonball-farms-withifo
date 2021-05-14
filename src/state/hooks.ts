@@ -157,7 +157,7 @@ export const useTotalValue = (): BigNumber => {
     for (let i = 0; i < pools.length; i++) {
       const pool = pools[i]
       let poolValue: BigNumber
-      if (pool.stakingTokenName === QuoteToken.DBALL) {
+      if (pool.stakingTokenName === QuoteToken.COAL) {
         const totalSaltStaked = new BigNumber(pool.totalStaked).div(new BigNumber(10).pow(18))
         poolValue = cakePrice.times(totalSaltStaked)
       }

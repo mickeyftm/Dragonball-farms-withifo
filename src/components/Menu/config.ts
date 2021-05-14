@@ -114,7 +114,7 @@ const config: MenuEntry[] = [
   //      },
       //  {
       //    label: 'DApp Radar',
-      //    href: 'https://dappradar.com/binance-smart-chain/defi/dragonball-finance',
+      //    href: 'https://dappradar.com/binance-smart-chain/defi/Mountain DeFi-finance',
       //  },
   //    ],
   //  },
@@ -142,14 +142,14 @@ const config: MenuEntry[] = [
   },
 
   //  {
-  //    label: 'DBALL Audit',
+  //    label: 'coal Audit',
   //    icon: 'AuditIcon',
-  //    href: 'https://mountaindefi.org/Dball.pdf',
+  //    href: 'https://mountaindefi.org/coal.pdf',
   //  },
   //  {
   //    label: 'SENZU Audit',
   //    icon: 'AuditIcon',
-  //    href: 'https://dragonballfinance.org/Senzu.pdf',
+  //    href: 'https://Mountain DeFifinance.org/Senzu.pdf',
   //  },
 ]
 
