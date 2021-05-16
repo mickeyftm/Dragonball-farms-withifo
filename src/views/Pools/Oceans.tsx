@@ -49,7 +49,7 @@ const Farm: React.FC = () => {
 
     // /!\ Assume that the farm quote price is BNB
     const stakingTokenPriceInBNB = priceToBnb(
-      QuoteToken.coal,
+      QuoteToken.COAL,
       stakingTokenFarm?.tokenPriceVsQuote,
       stakingTokenFarm?.quoteTokenSymbol,
     )

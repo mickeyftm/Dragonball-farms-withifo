@@ -3,67 +3,36 @@ import styled from 'styled-components'
 import { Card, CardBody, Heading, Skeleton, Text } from 'mountaindefi-uikit'
 import useI18n from 'hooks/useI18n'
 import { useGetStats } from 'hooks/api'
-import { useTotalValue, useTotalValue3 } from '../../../state/hooks'
+import { useTotalValue } from '../../../state/hooks'
 import CardValue from './CardValue'
 
-const StyledTotalValueLockedCard = styled.div`
+const StyledTotalValueLockedCard = styled(Card)`
   align-items: center;
   display: flex;
   flex: 1;
-`
-const Row = styled.div`
-  align-items: center;
-  display: flex;
-  font-size: 14px;
-  justify-content: space-between;
-  margin-bottom: 8px;
-`
-const StyledCakeStats = styled(Card)`
-  margin-left: auto;
-  margin-right: auto;
 `
 
 const TotalValueLockedCard = () => {
   const TranslateString = useI18n()
   // const data = useGetStats()
   const totalValue = useTotalValue();
-  const totalValue3 = useTotalValue3();
-
-  const totalValueAll = totalValue.plus(totalValue3)
   // const tvl = totalValue.toFixed(2);
 
   return (
-    <StyledCakeStats>
+    <StyledTotalValueLockedCard>
       <CardBody>
         <Heading size="lg" mb="24px">
           {TranslateString(999, 'Total Value Locked (TVL)')}
         </Heading>
         <>
-          <Row>
-            <Text fontSize="20px" color="textSubtle">{TranslateString(9990, 'Across Farms and Pools')}</Text>
-            <CardValue fontSize="20px" value={totalValue.toNumber()} prefix="$" decimals={2}/>
-          </Row>
-            
-          <Row>
-            <Text fontSize="20px" color="textSubtle">Across Layer 1</Text>
-            <CardValue fontSize="20px" value={totalValue3.toNumber()} prefix="$" decimals={2}/>
-          </Row>
-          
-        </>
-      </CardBody>
-      
-      <StyledTotalValueLockedCard>
-      <CardBody>
-        <>
           {/* <Heading size="xl">{`$${tvl}`}</Heading> */}
           {/* <Heading size="xl"> */}
-            <CardValue value={totalValueAll.toNumber()} prefix="$" decimals={2}/>
+            <CardValue value={totalValue.toNumber()} prefix="$" decimals={2}/>
           {/* </Heading> */}
-          <Text color="textSubtle">Across All  Farms,  Pools,  Layer 1</Text>
+          <Text color="textSubtle">{TranslateString(999, 'Across all Mines and Nodes')}</Text>
         </>
       </CardBody>
     </StyledTotalValueLockedCard>
-    </StyledCakeStats>
   )
 }
 

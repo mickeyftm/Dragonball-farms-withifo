@@ -10,20 +10,20 @@ import TotalValueLockedCard from './components/TotalValueLockedCard'
 import TwitterCard from './components/TwitterCard'
 
 const Hero = styled.div`
-  align-items: center;
+  align-items: right;
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin: auto;
   margin-bottom: 32px;
   padding-top: 116px;
-  text-align: center;
+  text-align: right;
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    background-image: url('/images/egg/3.png'), url('/images/egg/3b.png');
-    background-position: left center, right center;
+    background-image: url('/images/egg/3.png');
+    background-position: left center;
     background-repeat: no-repeat;
-    height: 240px;
+    height: 260px;
     padding-top: 0;
   }
 `
@@ -70,21 +70,16 @@ const Home: React.FC = () => {
   return (
     <Page>
       <Hero>
-        <Heading as="h1" size="xl" mb="24px" color="secondary">
-          {TranslateString(576, 'Mountain DeFi Finance')}
-        </Heading>
-        <Text>{TranslateString(5780, 'All on one Defi platform in Binance Smart Chain.')}</Text>
+        <Text>{TranslateString(5780, 'All in one Defi platform in Binance Smart Chain.')}</Text>
       </Hero>
       <div>
         <Cards>
           <FarmStakingCard />
           <TwitterCard/>
           <CakeStats />
-          <CakeStats3 />
+          <TotalValueLockedCard />
         </Cards>
-          <Cards2>
-            <TotalValueLockedCard />
-          </Cards2>
+            
       </div>
     </Page>
   )
