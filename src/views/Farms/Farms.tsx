@@ -8,7 +8,7 @@ import { Image, Heading } from 'mountaindefi-uikit'
 import { BLOCKS_PER_YEAR, CAKE_PER_BLOCK, CAKE_POOL_PID } from 'config'
 import FlexLayout from 'components/layout/Flex'
 import Page from 'components/layout/Page'
-import { useFarms, usePriceBnbBusd, usePriceCakeBusd, usePrice3CakeBusd } from 'state/hooks'
+import { useFarms, usePriceBnbBusd, usePriceCakeBusd } from 'state/hooks'
 import useRefresh from 'hooks/useRefresh'
 import { fetchFarmUserDataAsync } from 'state/actions'
 import { QuoteToken } from 'config/constants/types'
@@ -26,7 +26,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   const TranslateString = useI18n()
   const farmsLP = useFarms()
   const cakePrice = usePriceCakeBusd()
-  const senzuPrice = usePrice3CakeBusd()
+  //  const senzuPrice = usePrice3CakeBusd()
   const bnbPrice = usePriceBnbBusd()
   const { account, ethereum }: { account: string; ethereum: provider } = useWallet()
   const {tokenMode} = farmsProps;
@@ -71,9 +71,9 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         if (farm.quoteTokenSymbol === QuoteToken.BNB) {
           totalValue = totalValue.times(bnbPrice);
         }
-        if (farm.quoteTokenSymbol === QuoteToken.SENZU) {
-          totalValue = totalValue.times(senzuPrice);
-        }
+        //  if (farm.quoteTokenSymbol === QuoteToken.SENZU) {
+        //    totalValue = totalValue.times(senzuPrice);
+        //  }
         if (farm.quoteTokenSymbol === QuoteToken.CAKE2) {
           totalValue = totalValue.times(cake2Price);
         }
@@ -91,13 +91,13 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           removed={removed}
           bnbPrice={bnbPrice}
           cakePrice={cakePrice}
-          senzuPrice={senzuPrice}
+          //  senzuPrice={senzuPrice}
           ethereum={ethereum}
           account={account}
         />
       ))
     },
-    [cakePrice, bnbPrice, senzuPrice, ethereum, account],
+    [cakePrice, bnbPrice, ethereum, account],
   )
 
   return (

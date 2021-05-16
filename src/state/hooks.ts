@@ -117,7 +117,7 @@ export const usePriceCakeBusd = (): BigNumber => {
 export const useTotalValue = (): BigNumber => {
   const farms = useFarms();
   const bnbPrice = usePriceBnbBusd();
-  const senzuPrice = usePrice3CakeBusd();
+  //  const senzuPrice = usePrice3CakeBusd();
   const cake2Price: BigNumber = useMemo(() => {
     return new BigNumber(35)
   }, [])
@@ -138,8 +138,6 @@ export const useTotalValue = (): BigNumber => {
         let val
         if (farm.quoteTokenSymbol === QuoteToken.BNB) {
           val = bnbPrice.times(farm.lpTotalInQuoteToken)
-        } else if (farm.quoteTokenSymbol === QuoteToken.SENZU) {
-          val = senzuPrice.times(farm.lpTotalInQuoteToken)
         } else if (farm.quoteTokenSymbol === QuoteToken.CAKE2) {
           val = cake2Price.times(farm.lpTotalInQuoteToken)
         } else if (farm.quoteTokenSymbol === QuoteToken.CAKE) {
@@ -166,7 +164,7 @@ export const useTotalValue = (): BigNumber => {
     }
 
     totalValue.current = farmsTotalValue
-  }, [bnbPrice, senzuPrice, farms, pools, cakePrice, cake2Price, usdtPrice])
+  }, [bnbPrice, farms, pools, cakePrice, cake2Price, usdtPrice])
 
   if (!totalValue) {
     return new BigNumber(0)
@@ -177,43 +175,43 @@ export const useTotalValue = (): BigNumber => {
 
 // Prices3
 
-export const usePrice3BnbBusd = (): BigNumber => {
-  const pid = 7 // BUSD-BNB LP
-  const farm = useFarm3FromPid(pid)
-  return farm?.tokenPriceVsQuote ? new BigNumber(farm?.tokenPriceVsQuote) : ZERO
-}
+//  export const usePrice3BnbBusd = (): BigNumber => {
+//    const pid = 7 // BUSD-BNB LP
+//    const farm = useFarm3FromPid(pid)
+//    return farm?.tokenPriceVsQuote ? new BigNumber(farm?.tokenPriceVsQuote) : ZERO
+//  }
 
-export const usePrice3CakeBusd = (): BigNumber => {
+//  export const usePrice3CakeBusd = (): BigNumber => {
   // const pid = 1 // CAKE-BNB LP
   // const bnbPriceUSD = usePriceBnbBusd()
   // const farm = useFarmFromPid(pid)
   // return farm.tokenPriceVsQuote ? bnbPriceUSD.times(farm.tokenPriceVsQuote) : ZERO
-  const pid = 0; // EGG-BUSD LP
-  const farm = useFarm3FromPid(pid);
-  return farm.tokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : ZERO;
-}
+//    const pid = 0; // EGG-BUSD LP
+//    const farm = useFarm3FromPid(pid);
+//    return farm.tokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : ZERO;
+//  }
 
-export const useTotalValue3 = (): BigNumber => {
-  const farms = useFarms3();
-  const bnbPrice = usePrice3BnbBusd();
-  const cakePrice = usePrice3CakeBusd();
+//  export const useTotalValue3 = (): BigNumber => {
+//    const farms = useFarms3();
+//    const bnbPrice = usePrice3BnbBusd();
+//    const cakePrice = usePrice3CakeBusd();
 
 
-  let value = new BigNumber(0);
-  for (let i = 0; i < farms.length; i++) {
-    const farm = farms[i]
-    if (farm.lpTotalInQuoteToken) {
-      let val;
-      if (farm.quoteTokenSymbol === QuoteToken.BNB) {
-        val = (bnbPrice.times(farm.lpTotalInQuoteToken));
-      }else if (farm.quoteTokenSymbol === QuoteToken.CAKE) {
-        val = (cakePrice.times(farm.lpTotalInQuoteToken));
-      }else{
-        val = (farm.lpTotalInQuoteToken);
-      }
-      value = value.plus(val);
-
-    }
-  }
-  return value;
-}
+//    let value = new BigNumber(0);
+//    for (let i = 0; i < farms.length; i++) {
+//      const farm = farms[i]
+//      if (farm.lpTotalInQuoteToken) {
+//        let val;
+//        if (farm.quoteTokenSymbol === QuoteToken.BNB) {
+//          val = (bnbPrice.times(farm.lpTotalInQuoteToken));
+//        }else if (farm.quoteTokenSymbol === QuoteToken.CAKE) {
+//          val = (cakePrice.times(farm.lpTotalInQuoteToken));
+//        }else{
+//          val = (farm.lpTotalInQuoteToken);
+//        }
+//        value = value.plus(val);
+//  
+//      }
+//    }
+//    return value;
+//  }

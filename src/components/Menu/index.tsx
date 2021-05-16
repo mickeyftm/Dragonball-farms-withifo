@@ -3,7 +3,7 @@ import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { allLanguages } from 'config/localisation/languageCodes'
 import { LanguageContext } from 'contexts/Localisation/languageContext'
 import useTheme from 'hooks/useTheme'
-import { usePriceCakeBusd, usePrice3CakeBusd } from 'state/hooks'
+import { usePriceCakeBusd } from 'state/hooks'
 import { Menu as UikitMenu } from 'mountaindefi-uikit'
 import config from './config'
 
@@ -12,7 +12,7 @@ const Menu = (props) => {
   const { selectedLanguage, setSelectedLanguage } = useContext(LanguageContext)
   const { isDark, toggleTheme } = useTheme()
   const cakePriceUsd = usePriceCakeBusd()
-  const cakePrice2Usd = usePrice3CakeBusd()
+  //  const cakePrice2Usd = usePrice3CakeBusd()
 
   return (
     <UikitMenu
@@ -25,10 +25,10 @@ const Menu = (props) => {
       langs={allLanguages}
       setLang={setSelectedLanguage}
       cakePriceUsd={cakePriceUsd.toNumber()}
-      cakePrice2Usd={cakePrice2Usd.toNumber()}
+      //  cakePrice2Usd={cakePrice2Usd.toNumber()}
       links={config}
       priceLink="https://bscscan.com/token/0xceB2f5e9C7F2D3BCd12A7560D73c56f3396af3F9"
-      priceLink2="https://bscscan.com/token/0xcBA1813Ede683333020cedea7C3b63FbaC28e78e"
+      //  priceLink2="https://bscscan.com/token/0xcBA1813Ede683333020cedea7C3b63FbaC28e78e"
       {...props}
     />
   )

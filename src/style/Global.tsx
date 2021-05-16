@@ -13,7 +13,6 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     background-color: ${({ theme }) => theme.colors.background};
-    background: url(/images/backgrounds/bgwebsite.png) top right no-repeat;
     background-attachment: fixed;
     
     img {
