@@ -1,28 +1,29 @@
-import React, { useEffect, Suspense, lazy } from 'react'
+import React, { useEffect, Suspense, lazy, useState } from 'react'
 import styled from 'styled-components'
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
+import { createBrowserHistory } from 'history'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { ResetCSS } from '@pancakeswap-libs/uikit'
 import BigNumber from 'bignumber.js'
 import { useFetchPublicData } from 'state/hooks'
+import { getReferralData } from 'utils/referralData'
 import GlobalStyle from './style/Global'
 import Menu from './components/Menu'
 import PageLoader from './components/PageLoader'
 
+
+
+const history = createBrowserHistory()
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page'
 const Home = lazy(() => import('./views/Home'))
 const Farms = lazy(() => import('./views/Farms'))
 
-//  const Home3 = lazy(() => import('./views/Layer/Home'))
-//  const Farms3 = lazy(() => import('./views/Layer/Farms'))
-
-// const Lottery = lazy(() => import('./views/Lottery'))
+const Home3 = lazy(() => import('./views/Layer/Home'))
+const Farms3 = lazy(() => import('./views/Layer/Farms'))
+const Referrals = lazy(() => import('./views/Referrals'))
 const Pools = lazy(() => import('./views/Pools'))
-const Ifos = lazy(() => import('./views/Ifos'))
 const NotFound = lazy(() => import('./views/NotFound'))
-// const Nft = lazy(() => import('./views/Nft'))
-// const Gaming = lazy(() => import('./views/Gaming'))
 // const Layered = lazy(() => import('./views/Layered'))
 const Roadmap = lazy(() => import('./views/Roadmap'))
 const Whitepaper = lazy(() => import('./views/Whitepaper'))
@@ -34,17 +35,28 @@ BigNumber.config({
 })
 
 
-
-
 const App: React.FC = () => {
-  const { account, connect } = useWallet()
+  const { account, connect } = useWallet();
   useEffect(() => {
     if (!account && window.localStorage.getItem('accountStatus')) {
-      connect('injected')
+      connect('injected');     
     }
   }, [account, connect])
 
-  useFetchPublicData()
+  const redirect = ()=>{
+    const isRedirect = getReferralData(account);
+    if(isRedirect){
+      history.replace({
+        pathname:'/referrals'
+      })
+    }
+  }
+
+  redirect();
+  useFetchPublicData();
+  
+
+ 
 
   return (
     <Router>
@@ -56,29 +68,32 @@ const App: React.FC = () => {
             <Route path="/" exact>
               <Home />
             </Route>
-            <Route path="/farms">
+            <Route path="/mines">
               <Farms />
             </Route>
-            <Route path="/pools">
+            <Route path="/nodes">
               <Farms tokenMode />
+            </Route>
+            <Route path="/layer/info" exact>
+              <Home3 />
+            </Route>
+            <Route path="/layer/mines">
+              <Farms3 />
+            </Route>
+            <Route path="/layer/nodes">
+              <Farms3 tokenMode />
             </Route>
             <Route path="/supersaiyanpool">
              <Pools />
             </Route>
-            {/* <Route path="/Gaming">
-              <Gaming />
-            </Route> */}
             <Route path="/Whitepaper">
               <Whitepaper />
             </Route>
-            {/* <Route path="/lottery">
-              <Lottery />
-            </Route> */}
+            <Route path="/referrals">
+              <Referrals/>
+            </Route>
             {/* <Route path="/Layered">
               <Layered />
-            </Route> */}
-            {/* <Route path="/ifo">
-             <Ifos />
             </Route> */}
             {/* <Route path="/nft"> */}
             {/*  <Nft /> */}
@@ -87,17 +102,14 @@ const App: React.FC = () => {
             {/* <Route path="/staking"> */}
             {/*  <Redirect to="/pools" /> */}
             {/* </Route> */}
-            {/* <Route path="/Nft">
-              <Nft />
-            </Route> */}
             <Route path="/Roadmap">
               <Roadmap />
             </Route>
             <Route path="/syrup">
-              <Redirect to="/pools" />
+              <Redirect to="/nodes" />
             </Route>
             <Route path="/nests">
-              <Redirect to="/pools" />
+              <Redirect to="/nodes" />
             </Route>
             {/* 404 */}
             <Route component={NotFound} />
