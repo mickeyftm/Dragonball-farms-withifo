@@ -19,8 +19,8 @@ const history = createBrowserHistory()
 const Home = lazy(() => import('./views/Home'))
 const Farms = lazy(() => import('./views/Farms'))
 
-const Home3 = lazy(() => import('./views/Layer/Home'))
-const Farms3 = lazy(() => import('./views/Layer/Farms'))
+//  const Home3 = lazy(() => import('./views/Layer/Home'))
+//  const Farms3 = lazy(() => import('./views/Layer/Farms'))
 const Referrals = lazy(() => import('./views/Referrals'))
 const Pools = lazy(() => import('./views/Pools'))
 const NotFound = lazy(() => import('./views/NotFound'))
@@ -47,7 +47,7 @@ const App: React.FC = () => {
     const isRedirect = getReferralData(account);
     if(isRedirect){
       history.replace({
-        pathname:'/referrals'
+        pathname:'/'
       })
     }
   }
@@ -68,13 +68,13 @@ const App: React.FC = () => {
             <Route path="/" exact>
               <Home />
             </Route>
-            <Route path="/mines">
+            <Route path="/farms">
               <Farms />
             </Route>
-            <Route path="/nodes">
+            <Route path="/pools">
               <Farms tokenMode />
             </Route>
-            <Route path="/layer/info" exact>
+            {/* <Route path="/layer/info" exact>
               <Home3 />
             </Route>
             <Route path="/layer/mines">
@@ -85,11 +85,11 @@ const App: React.FC = () => {
             </Route>
             <Route path="/supersaiyanpool">
              <Pools />
-            </Route>
+            </Route>   */}
             <Route path="/Whitepaper">
               <Whitepaper />
             </Route>
-            <Route path="/referrals">
+            <Route path="/referral">
               <Referrals/>
             </Route>
             {/* <Route path="/Layered">
