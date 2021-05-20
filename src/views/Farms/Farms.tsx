@@ -91,7 +91,6 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           removed={removed}
           bnbPrice={bnbPrice}
           cakePrice={cakePrice}
-          //  senzuPrice={senzuPrice}
           ethereum={ethereum}
           account={account}
         />

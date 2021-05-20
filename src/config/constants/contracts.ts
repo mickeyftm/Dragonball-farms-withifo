@@ -12,11 +12,11 @@ export default {
     97: '',
   },
   cake3: {
-    56: '0xcBA1813Ede683333020cedea7C3b63FbaC28e78e',
+    56: '',
     97: '',
   },
   masterChef3: {
-    56: '0x48F4eC8AD1cb16fB45f75733BFF41b4BE7f49B00',
+    56: '',
     97: '',
   },
   wbnb: {
@@ -44,11 +44,11 @@ export default {
     97: '',
   },
   cake2: {
-    56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+    56: '',
     97: '',
   },
   senzu: {
-    56: '0xcba1813ede683333020cedea7c3b63fbac28e78e',
+    56: '',
     97: '',
   },
 }

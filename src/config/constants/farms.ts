@@ -13,7 +13,7 @@ const farms: FarmConfig[] = [
     tokenSymbol: 'COAL',
     tokenAddresses: {
       97: '',
-      56: '0xa6227a81cc18b35fedd709f7fc9d1f3e0acdadf8',
+      56: '0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
@@ -29,7 +29,7 @@ const farms: FarmConfig[] = [
     tokenSymbol: 'COAL',
     tokenAddresses: {
       97: '',
-      56: '0xa6227a81cc18b35fedd709f7fc9d1f3e0acdadf8',
+      56: '0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8',
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
@@ -127,7 +127,7 @@ const farms: FarmConfig[] = [
     tokenSymbol: 'COAL',
     tokenAddresses: {
       97: '',
-      56: '0xa6227a81cc18b35fedd709f7fc9d1f3e0acdadf8',
+      56: '0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
@@ -173,7 +173,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'USDT',
     lpAddresses: {
       97: '',
-      56: '0xc15fa3e22c912a276550f3e5fe3b0deb87b55acd', // USDT-BUSD LP
+      56: '0x7EFaEf62fDdCCa950418312c6C91Aef321375A00', // USDT-BUSD LP
     },
     tokenSymbol: 'USDT',
     tokenAddresses: {
@@ -190,7 +190,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'BTCB',
     lpAddresses: {
       97: '',
-      56: '0xb8875e207ee8096a929d543c9981c9586992eacb', // BTCB-BUSD LP
+      56: '0xF45cd219aEF8618A92BAa7aD848364a158a24F33', // BTCB-BUSD LP
     },
     tokenSymbol: 'BTCB',
     tokenAddresses: {
@@ -226,7 +226,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'CAKE',
     lpAddresses: {
       97: '',
-      56: '0x0ed8e0a2d99643e1e65cca22ed4424090b8b7458', // CAKE-BUSD LP
+      56: '0x804678fa97d91B974ec2af3c843270886528a9E6', // CAKE-BUSD LP
     },
     tokenSymbol: 'CAKE',
     tokenAddresses: {
