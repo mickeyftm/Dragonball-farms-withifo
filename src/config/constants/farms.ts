@@ -166,40 +166,40 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
   },
-  {
-    pid: 14,
-    risk: 1,
-    isTokenOnly: true,
-    lpSymbol: 'USDT',
-    lpAddresses: {
-      97: '',
-      56: '0x7EFaEf62fDdCCa950418312c6C91Aef321375A00', // USDT-BUSD LP
-    },
-    tokenSymbol: 'USDT',
-    tokenAddresses: {
-      97: '',
-      56: '0x55d398326f99059ff775485246999027b3197955',
-    },
-    quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busd,
-  },
-  {
-    pid: 9,
-    risk: 2,
-    isTokenOnly: true,
-    lpSymbol: 'BTCB',
-    lpAddresses: {
-      97: '',
-      56: '0xF45cd219aEF8618A92BAa7aD848364a158a24F33', // BTCB-BUSD LP
-    },
-    tokenSymbol: 'BTCB',
-    tokenAddresses: {
-      97: '',
-      56: '0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c',
-    },
-    quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busd,
-  },
+  // {
+  //   pid: 14,
+  //   risk: 1,
+  //   isTokenOnly: true,
+  //   lpSymbol: 'USDT',
+  //   lpAddresses: {
+  //     97: '',
+  //     56: '0x7EFaEf62fDdCCa950418312c6C91Aef321375A00', // USDT-BUSD LP
+  //   },
+  //   tokenSymbol: 'USDT',
+  //   tokenAddresses: {
+  //     97: '',
+  //     56: '0x55d398326f99059ff775485246999027b3197955',
+  //   },
+  //   quoteTokenSymbol: QuoteToken.BUSD,
+  //   quoteTokenAdresses: contracts.busd,
+  // },
+  // {
+  //   pid: 9,
+  //   risk: 2,
+  //   isTokenOnly: true,
+  //   lpSymbol: 'BTCB',
+  //   lpAddresses: {
+  //     97: '',
+  //     56: '0xF45cd219aEF8618A92BAa7aD848364a158a24F33', // BTCB-BUSD LP
+  //   },
+  //   tokenSymbol: 'BTCB',
+  //   tokenAddresses: {
+  //     97: '',
+  //     56: '0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c',
+  //   },
+  //   quoteTokenSymbol: QuoteToken.BUSD,
+  //   quoteTokenAdresses: contracts.busd,
+  // },
   //  {
   //    pid: 10,
   //    risk: 2,
@@ -219,23 +219,23 @@ const farms: FarmConfig[] = [
   //  },
 
 
-  {
-    pid: 11,
-    risk: 4,
-    isTokenOnly: true,
-    lpSymbol: 'CAKE',
-    lpAddresses: {
-      97: '',
-      56: '0x804678fa97d91B974ec2af3c843270886528a9E6', // CAKE-BUSD LP
-    },
-    tokenSymbol: 'CAKE',
-    tokenAddresses: {
-      97: '',
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-    },
-    quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busd,
-  },
+  // {
+  //   pid: 11,
+  //   risk: 4,
+  //   isTokenOnly: true,
+  //   lpSymbol: 'CAKE',
+  //   lpAddresses: {
+  //     97: '',
+  //     56: '0x804678fa97d91B974ec2af3c843270886528a9E6', // CAKE-BUSD LP
+  //   },
+  //   tokenSymbol: 'CAKE',
+  //   tokenAddresses: {
+  //     97: '',
+  //     56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+  //   },
+  //   quoteTokenSymbol: QuoteToken.BUSD,
+  //   quoteTokenAdresses: contracts.busd,
+  // },
 
 
   
