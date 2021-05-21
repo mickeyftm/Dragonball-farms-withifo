@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import BigNumber from 'bignumber.js'
 import styled, { keyframes } from 'styled-components'
-import { Flex, Text, Skeleton } from '@pancakeswap-libs/uikit'
+import { Flex, Text, Skeleton } from 'mountaindefi-uikit'
 import { communityFarms } from 'config/constants'
 import { Farm } from 'state/types'
 import { provider } from 'web3-core'
@@ -89,9 +89,6 @@ interface FarmCardProps {
   account?: string
 }
 
-
-
-
 const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, senzuPrice, bnbPrice, ethereum, account }) => {
   const TranslateString = useI18n()
 
@@ -132,7 +129,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, senzuPric
     : '-'
 
   const lpLabel = farm.lpSymbol
-  const earnLabel = 'DBALL'
+  const earnLabel = 'coal'
 
   
     const farmAPY = farm.apy && farm.apy.times(new BigNumber(100)).toNumber().toLocaleString(undefined, {
@@ -140,13 +137,16 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, senzuPric
       maximumFractionDigits: 2,
     })
   
+    
+  
 
+  
 
   const { quoteTokenAdresses, quoteTokenSymbol, tokenAddresses, risk } = farm
 
   return (
     <FCard>
-      {farm.tokenSymbol === 'DBALL' && <StyledCardAccent />}
+      {farm.tokenSymbol === 'coal' && <StyledCardAccent />}
       <CardHeading
         lpLabel={lpLabel}
         multiplier={farm.multiplier}
@@ -186,14 +186,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, senzuPric
         <Text style={{ fontSize: '24px' }}>{TranslateString(10001, 'Deposit Fee')}:</Text>
         <Text bold style={{ fontSize: '24px' }}>{(farm.depositFeeBP / 100)}%</Text>
       </Flex>
-      <Flex justifyContent='space-between'>
-        <Text style={{ fontSize: '24px' }}>{TranslateString(10011, 'Unstaking Fee')}:</Text>
-        <Text bold style={{ fontSize: '24px' }}>{(farm.unstakingFeeBP / 100)}%</Text>
-      </Flex>
-      <Flex justifyContent='space-between'>
-        <Text style={{ fontSize: '16px' }}>{TranslateString(10011, 'Harvest Lockedup')}:</Text>
-        <Text bold style={{ fontSize: '16px' }}>{(farm.unstakingFeeBP / 100)}%</Text>
-      </Flex>
+
       <CardActionsContainer farm={farm} ethereum={ethereum} account={account} />
       <Divider />
       <ExpandableSectionButton
