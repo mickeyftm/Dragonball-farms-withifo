@@ -1,7 +1,7 @@
 import React from 'react'
 import useI18n from 'hooks/useI18n'
 import styled from 'styled-components'
-import { Text, Flex, Link, LinkExternal } from 'mountaindefi-uikit'
+import { Text, Flex, Link, LinkExternal } from '@pancakeswap-libs/uikit'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { Address } from 'config/constants/types'
 
@@ -54,9 +54,9 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
         <Text>{TranslateString(316, 'Stake')}:</Text>
         <StyledLinkExternal href={
           isTokenOnly ?
-            `https://exchange.mountaindefifinance.org/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
+            `https://exchange.dragonballfinance.org/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
             :
-            `https://exchange.mountaindefifinance.org/#/add/${liquidityUrlPathParts}`
+            `https://exchange.dragonballfinance.org/#/add/${liquidityUrlPathParts}`
         }>
           {lpLabel}
         </StyledLinkExternal>

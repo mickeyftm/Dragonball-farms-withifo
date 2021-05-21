@@ -4,11 +4,11 @@ import { useDispatch } from 'react-redux'
 import BigNumber from 'bignumber.js'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { provider } from 'web3-core'
-import { Image, Heading } from 'mountaindefi-uikit'
+import { Image, Heading } from '@pancakeswap-libs/uikit'
 import { BLOCKS_PER_YEAR, CAKE_PER_BLOCK, CAKE_POOL_PID } from 'config'
 import FlexLayout from 'components/layout/Flex'
 import Page from 'components/layout/Page'
-import { useFarms, usePriceBnbBusd, usePriceCakeBusd } from 'state/hooks'
+import { useFarms, usePriceBnbBusd, usePriceCakeBusd, usePrice3CakeBusd } from 'state/hooks'
 import useRefresh from 'hooks/useRefresh'
 import { fetchFarmUserDataAsync } from 'state/actions'
 import { QuoteToken } from 'config/constants/types'
@@ -26,7 +26,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   const TranslateString = useI18n()
   const farmsLP = useFarms()
   const cakePrice = usePriceCakeBusd()
-  //  const senzuPrice = usePrice3CakeBusd()
+  const senzuPrice = usePrice3CakeBusd()
   const bnbPrice = usePriceBnbBusd()
   const { account, ethereum }: { account: string; ethereum: provider } = useWallet()
   const {tokenMode} = farmsProps;
@@ -71,9 +71,9 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         if (farm.quoteTokenSymbol === QuoteToken.BNB) {
           totalValue = totalValue.times(bnbPrice);
         }
-        //  if (farm.quoteTokenSymbol === QuoteToken.SENZU) {
-        //    totalValue = totalValue.times(senzuPrice);
-        //  }
+        if (farm.quoteTokenSymbol === QuoteToken.SENZU) {
+          totalValue = totalValue.times(senzuPrice);
+        }
         if (farm.quoteTokenSymbol === QuoteToken.CAKE2) {
           totalValue = totalValue.times(cake2Price);
         }
@@ -91,12 +91,13 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           removed={removed}
           bnbPrice={bnbPrice}
           cakePrice={cakePrice}
+          senzuPrice={senzuPrice}
           ethereum={ethereum}
           account={account}
         />
       ))
     },
-    [cakePrice, bnbPrice, ethereum, account],
+    [cakePrice, bnbPrice, senzuPrice, ethereum, account],
   )
 
   return (
@@ -104,13 +105,16 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
         {
           tokenMode ?
-            TranslateString(10002, 'Stake tokens to earn coal')
+            TranslateString(10002, 'Stake tokens to earn DBALL')
             :
-          TranslateString(320, 'Stake LP tokens to earn coal')
+          TranslateString(320, 'Stake LP tokens to earn DBALL')
         }
       </Heading>
       <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
-        {TranslateString(10000, 'Deposit Fee will be used to buyback coal')}
+        {TranslateString(10000, 'Deposit Fee will be used to buyback DBALL')}
+      </Heading>
+      <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
+        All Farms and Pools have 2% Unstaking Fee
       </Heading>
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly}/>
       <div>
