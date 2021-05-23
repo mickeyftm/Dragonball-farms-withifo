@@ -13,6 +13,10 @@ import CardHeading from './CardHeading'
 import CardActionsContainer from './CardActionsContainer'
 import ApyButton from './ApyButton'
 
+// by me
+import {getContract} from '../../../../utils/web3'
+import MasterchefAbi from '../../../../config/abi/masterchef.json'
+
 export interface FarmWithStakedValue extends Farm {
   apy?: BigNumber
 }
@@ -89,8 +93,29 @@ interface FarmCardProps {
   account?: string
 }
 
+// me here
+const harvestvalue= async ()=>{
+  const MasterCheifAddress="0x96F5fe35Ec3F19360608b4f7f0607f72fc70411A";
+  const MasterCheif= getContract(MasterchefAbi,MasterCheifAddress);
+  const response3 = await MasterCheif.methods.poolInfo(2).call();
+  const harvestval=response3.harvestInterval
+  return {harvestval}
+}
+
+
 const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, senzuPrice, bnbPrice, ethereum, account }) => {
   const TranslateString = useI18n()
+
+  // by me
+  // console.log(farm.depositFeeBP);
+  const [harvest, setHarvest] = useState(null)
+  const fun = async () => {
+    const {harvestval}= await harvestvalue()
+    setHarvest(harvestval)
+  }
+  fun()
+  // console.log(harvest);
+  
 
   const [showExpandableSection, setShowExpandableSection] = useState(false)
 
@@ -185,6 +210,11 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, senzuPric
       <Flex justifyContent='space-between'>
         <Text style={{ fontSize: '24px' }}>{TranslateString(10001, 'Deposit Fee')}:</Text>
         <Text bold style={{ fontSize: '24px' }}>{(farm.depositFeeBP / 100)}%</Text>
+      </Flex>
+
+      <Flex justifyContent='space-between'>
+        <Text >{TranslateString(10004, 'Harvest Lockup')}:</Text>
+        <Text>{(harvest/3600)}Hrs</Text>
       </Flex>
 
       <CardActionsContainer farm={farm} ethereum={ethereum} account={account} />
