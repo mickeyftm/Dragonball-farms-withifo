@@ -81,7 +81,7 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Price Graph',
-        href: 'https://dex.guru/token/0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8-bsc',
+        href: 'https://dex.guru/token/0x7bc6b82abd69248943c156dc7e96d6a58f8c5daf-bsc',
       },
       {
         label: 'DApp Radar',
@@ -96,7 +96,7 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'COAL',
-        href: "https://bscscan.com/address/0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8",
+        href: "https://bscscan.com/address/0x7bc6b82abd69248943c156dc7e96d6a58f8c5daf",
       },
     ],
   },

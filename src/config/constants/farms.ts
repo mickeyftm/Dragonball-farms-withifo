@@ -3,33 +3,33 @@ import { FarmConfig, QuoteToken } from './types'
 
 const farms: FarmConfig[] = [
   {
-    pid: 1,
+    pid: 0,
     risk: 5,
     lpSymbol: 'COAL-BUSD LP',
     lpAddresses: {
       97: '',
-      56: '0x176F792CE67C7f21323DeeefC734cca960795780',
+      56: '0x0164a7C6eB3Da1537cb961CeABbA6d833e061BFe',
     },
     tokenSymbol: 'COAL',
     tokenAddresses: {
       97: '',
-      56: '0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8',
+      56: '0x7bC6B82abD69248943C156DC7E96D6a58F8C5DAf',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
   },
   {
-    pid: 13,
+    pid: 1,
     risk: 5,
     lpSymbol: 'COAL-BNB LP',
     lpAddresses: {
       97: '',
-      56: '0xC3F322118e9C06A123B388a685E5cA963D52E642',
+      56: '0x2453aC03299f37c966d2f7e30d4E93cCEF4cdB3a',
     },
     tokenSymbol: 'COAL',
     tokenAddresses: {
       97: '',
-      56: '0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8',
+      56: '0x7bC6B82abD69248943C156DC7E96D6a58F8C5DAf',
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
@@ -67,7 +67,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
   },
-  {
+  /*  {
     pid: 4,
     risk: 5,
     lpSymbol: 'ETH-WBNB LP',
@@ -82,8 +82,8 @@ const farms: FarmConfig[] = [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
-  },
-  {
+  },  */
+  /*  {
     pid: 5,
     risk: 5,
     lpSymbol: 'DOT-BNB LP',
@@ -98,7 +98,7 @@ const farms: FarmConfig[] = [
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
-  },
+  }, */
   //  {
   //    pid: 6,
   //    risk: 5,
@@ -116,7 +116,7 @@ const farms: FarmConfig[] = [
   //    quoteTokenAdresses: contracts.wbnb,
   //  },
   {
-    pid: 7,
+    pid: 4,
     risk: 5,
     isTokenOnly: true,
     lpSymbol: 'COAL',
@@ -127,12 +127,12 @@ const farms: FarmConfig[] = [
     tokenSymbol: 'COAL',
     tokenAddresses: {
       97: '',
-      56: '0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8',
+      56: '0x7bC6B82abD69248943C156DC7E96D6a58F8C5DAf',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
   },
-  {
+  /* {
     pid: 12,
     risk: 1,
     isTokenOnly: true,
@@ -148,9 +148,9 @@ const farms: FarmConfig[] = [
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
-  },
+  },  */
   {
-    pid: 8,
+    pid: 5,
     risk: 3,
     isTokenOnly: true,
     lpSymbol: 'WBNB',

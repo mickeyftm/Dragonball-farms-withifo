@@ -1,14 +1,14 @@
 export default {
   cake: {
-    56: '0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8',
+    56: '0x7bc6b82abd69248943c156dc7e96d6a58f8c5daf',
     97: '',
   },
   coal: {
-    56: '0xA6227a81CC18b35fEdd709F7FC9d1f3e0acDAdf8',
+    56: '0x7bc6b82abd69248943c156dc7e96d6a58f8c5daf',
     97: '',
   },
   masterChef: {
-    56: '0x96F5fe35Ec3F19360608b4f7f0607f72fc70411A',
+    56: '0xeF9584E069e1346C015D3699E78294AD253A348d',
     97: '',
   },
   cake3: {
