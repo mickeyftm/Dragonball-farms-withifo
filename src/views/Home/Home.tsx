@@ -69,8 +69,7 @@ const Home: React.FC = () => {
   return (
     <Page>
       <Hero>
-        <Text>{TranslateString(5780, 'Yield farming focused on growth and rewarding investors with')}</Text>
-        <Text>{TranslateString(5780, 'Anti-Whale, Anti-bot, and Auto-Liquidity mechanisms.')}</Text>
+        <Text>{TranslateString(5780, 'All in one Defi platform in Binance Smart Chain.')}</Text>
       </Hero>
       <div>
         <Cards>
