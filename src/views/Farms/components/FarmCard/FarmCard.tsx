@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useState,useEffect, useCallback } from 'react'
 import BigNumber from 'bignumber.js'
 import styled, { keyframes } from 'styled-components'
 import { Flex, Text, Skeleton } from 'mountaindefi-uikit'
@@ -16,6 +16,8 @@ import ApyButton from './ApyButton'
 // by me
 import {getContract} from '../../../../utils/web3'
 import MasterchefAbi from '../../../../config/abi/masterchef.json'
+import farms from "../../../../config/constants/farms";
+
 
 export interface FarmWithStakedValue extends Farm {
   apy?: BigNumber
@@ -94,28 +96,38 @@ interface FarmCardProps {
 }
 
 // me here
-const harvestvalue= async ()=>{
-  const MasterCheifAddress="0x96F5fe35Ec3F19360608b4f7f0607f72fc70411A";
-  const MasterCheif= getContract(MasterchefAbi,MasterCheifAddress);
-  const response3 = await MasterCheif.methods.poolInfo(2).call();
-  const harvestval=response3.harvestInterval
-  return {harvestval}
-}
+// const harvestvalue= async ()=>{
+//   const MasterCheifAddress="0x96F5fe35Ec3F19360608b4f7f0607f72fc70411A";
+//   const MasterCheif= getContract(MasterchefAbi,MasterCheifAddress);
+//     const response3 = await MasterCheif.methods.poolInfo(farm.pid).call();
+//     console.log('response3',response3);
+//     const harvestval=response3.harvestInterval;
+//     return {harvestval1}
+// }
 
 
 const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, senzuPrice, bnbPrice, ethereum, account }) => {
   const TranslateString = useI18n()
-
+  const [harvest, setHarvest] = useState(null)
   // by me
   // console.log(farm.depositFeeBP);
-  const [harvest, setHarvest] = useState(null)
-  const fun = async () => {
-    const {harvestval}= await harvestvalue()
-    setHarvest(harvestval)
+  const harvestvalue= useCallback(async()=>{
+    const MasterCheifAddress="0x96F5fe35Ec3F19360608b4f7f0607f72fc70411A";
+    const MasterCheif= await getContract(MasterchefAbi,MasterCheifAddress);
+      const response3 = await MasterCheif.methods.poolInfo(farm.pid).call();
+      const harvestval= response3.harvestInterval;
+      return {harvestval}
+
+  },[farm.pid]) 
+
+
+  async function fun(){
+   const {harvestval}= await harvestvalue();
+   setHarvest(harvestval);
   }
+   
   fun()
-  // console.log(harvest);
-  
+
 
   const [showExpandableSection, setShowExpandableSection] = useState(false)
 
