@@ -73,7 +73,7 @@ const config: MenuEntry[] = [
   {
     label: 'Roadmap',
     icon: 'RoadmapIcon',
-    href: 'https://mountaindefi.org/Roadmap',
+    href: 'https://docs.mountaindefi.com/roadmap',
   },
   {
     label: 'Coal Info',
