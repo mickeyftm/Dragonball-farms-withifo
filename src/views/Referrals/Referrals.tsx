@@ -157,7 +157,7 @@ margin: 2% 4%;
 const Referrals: React.FC = () => {
   const TranslateString = useI18n();
   const { account, ethereum }: { account: any; ethereum: provider } = useWallet()
-  const link=`https://mountaindefi.com/?ref=${account}`;
+  const link=`https://mountaindefi-ref.netlify.app/?ref=${account}`;
   const [commission, setCommission] = useState(0)
   const [referralsCount, setReferralsCount] = useState(0)
 
